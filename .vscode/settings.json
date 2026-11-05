@@ -1,0 +1,4 @@
+{
+    "cmake.sourceDirectory": "/Users/jesusrosales/Documents/RAG-against-the-machine-/core_projects_files/vllm-0.10.1",
+    "python-envs.defaultEnvManager": "ms-python.python:system"
+}
