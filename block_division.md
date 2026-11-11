@@ -47,5 +47,6 @@ flowchart LR
 ## Pending
 
 - Next session (user decision, 2026-11-11): first define every piece the "index" service uses, then the service itself. Done: i1 path finder, i2 chunking. To define, one by one: i3 BM25 statistics (gets the full dict from chunking, always recomputed over all chunks); i4 embeddings (gets both dicts, embeds only new or changed files, copies the rest; without the model the index is built without the semantic part, spec point 4.1 case 15); i5 versioned index store (loads the previous version for chunking; writes, verifies and activates the new one, spec point 4.1 cases 7 to 11, pending 65); i6 the "index" service itself (chains i5 load → i1 → i2 → i3 → i4 → i5 save). The user has not yet confirmed that these are the 4 they meant nor which one goes first.
+- Block 3 chunking: how max_chunk_size (index command argument, spec point 4.1) reaches the chunkers, which cut to it; not decided yet (found by the external review of the close, 2026-11-11).
 - Service layer (the "index" orchestrator and the other service functions: search, search_dataset, answer, answer_dataset, evaluate with recall@k): which block holds it.
 - Blocks after these: not proposed yet (the user proposes them block by block, row 403 of workflow).
